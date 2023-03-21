@@ -1032,14 +1032,7 @@
   
   
 }
-# 1. UMAP展示所有细胞的分型结果；四组下拆分的结果呈现，按照细胞类型着色；
-# 2.每个细胞类型代表性的一个marker的feature plot
-# 3.柱状图分别显示四组中T细胞的比例，Neutrophil的比例；
-# 4.小提琴图显示四组间T细胞中TNFa，IFNr，Gamb，Tim3表达的差异，注意小提琴的着色对应每组中表达的平均水平；
-# 5.细分T细胞，鉴定Treg细胞亚型，柱状图显示四组中Treg细胞比例；
-# 6.细分myeloid，进行macrophage亚类，对macrophage亚类进行M2评分，选择M2评分最高的亚类，柱状图四组之间比较
-# 7.对于T细胞，利用GSVA在细胞水平上进行HALLMARK、KEGG、GO的打分，比较四组之间T细胞的pathway信号，识别差异pathway，热图显示
-# 8.对于macrophage和tumor cell重复7的过程
+
 {
   #四组小鼠所有细胞
   {
