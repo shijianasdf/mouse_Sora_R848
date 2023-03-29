@@ -1,3 +1,5 @@
+# @title 每个样本的质量控制、去双细胞、细胞类型注释、以及结果的展示
+# @author shi jian
 # Vehicle
 {
   N.sce <- FastSeurat(count=NULL,
