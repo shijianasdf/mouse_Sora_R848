@@ -1,3 +1,4 @@
+#' @author shijian
 #对髓样细胞精细分群注释
   {
     myeloid <- subset(sce_merge_res1$sce,celltype1 == "Dendritic_cell" | celltype1 == "Marcrophage" | celltype1 == "Mast_cell" | celltype1 == "Neutrophil_cell")
