@@ -1,4 +1,5 @@
-  #中性粒细胞中筛选各组上调的基因，作功能注释
+# @author shijian  
+#中性粒细胞中筛选各组上调的基因，作功能注释
   {
     sce_merge_res1 <- readRDS("./Results/data/sce_merge_res1.rds")
     #细胞打标签
