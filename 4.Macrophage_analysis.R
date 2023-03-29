@@ -1,3 +1,4 @@
+# @author shijian
 #提取巨噬细胞cluster2进行GSVA分析
   {
     Marcrophage_sce <- subset(myeloid_sce$sce,seurat_clusters == 2)
