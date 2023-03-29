@@ -275,3 +275,38 @@
     
     
   }
+
+#infercnv
+  {
+    class(sce_merge_res1$sce@meta.data$celltype)
+    table(sce_merge_res1$sce@meta.data$celltype)
+    sce_merge_res1$sce@meta.data$celltypes <- NA
+    sce_merge_res1$sce@meta.data$celltypes[sce_merge_res1$sce@meta.data$seurat_clusters==0] ="EPCAM_cell_0"
+    sce_merge_res1$sce@meta.data$celltypes[sce_merge_res1$sce@meta.data$seurat_clusters==1] = "CD8+T_cell_1"
+    sce_merge_res1$sce@meta.data$celltypes[sce_merge_res1$sce@meta.data$seurat_clusters==2] = "Neutrophil_cell_2"
+    sce_merge_res1$sce@meta.data$celltypes[sce_merge_res1$sce@meta.data$seurat_clusters==3] = "Neutrophil_cell_3"
+    sce_merge_res1$sce@meta.data$celltypes[sce_merge_res1$sce@meta.data$seurat_clusters==4] = "Marcrophage_4"
+    sce_merge_res1$sce@meta.data$celltypes[sce_merge_res1$sce@meta.data$seurat_clusters==5] = "CD8+T_cell_5"
+    sce_merge_res1$sce@meta.data$celltypes[sce_merge_res1$sce@meta.data$seurat_clusters==6] = "NK_6"
+    sce_merge_res1$sce@meta.data$celltypes[sce_merge_res1$sce@meta.data$seurat_clusters==7] = "CD4+T_cell_7"
+    sce_merge_res1$sce@meta.data$celltypes[sce_merge_res1$sce@meta.data$seurat_clusters==8] = "Stromal_cell_8"
+    sce_merge_res1$sce@meta.data$celltypes[sce_merge_res1$sce@meta.data$seurat_clusters==9] = "Dendritic_cell_9"
+    sce_merge_res1$sce@meta.data$celltypes[sce_merge_res1$sce@meta.data$seurat_clusters==10] = "EPCAM_cell_10"
+    sce_merge_res1$sce@meta.data$celltypes[sce_merge_res1$sce@meta.data$seurat_clusters==11] = "CD8+T_cell_11"
+    sce_merge_res1$sce@meta.data$celltypes[sce_merge_res1$sce@meta.data$seurat_clusters==12] = "B_cell_12"
+    sce_merge_res1$sce@meta.data$celltypes[sce_merge_res1$sce@meta.data$seurat_clusters==13] = "Dendritic_cell_13"
+    sce_merge_res1$sce@meta.data$celltypes[sce_merge_res1$sce@meta.data$seurat_clusters==14] = "Mast_cell_14"
+    res_mouse <- FastInferCNV(obj=sce_merge_res1$sce,
+                              counts=NULL,
+                              annotations_file = NULL,
+                              cellType = "celltypes",
+                              gene_order_file = NULL,
+                              ref_group_names = c("CD8+T_cell_1","Neutrophil_cell_2","Neutrophil_cell_3","Marcrophage_4","CD8+T_cell_5","NK_6","CD4+T_cell_7","Stromal_cell_8","Dendritic_cell_9","CD8+T_cell_11","B_cell_12","Dendritic_cell_13","Mast_cell_14"),  
+                              cutoff = c(0.1,1)[1], 
+                              analysis_mode = c("samples", "subclusters", "cells")[1],
+                              out_dir = "mouse_inferCNV",
+                              cluster = T,
+                              HMM = F,
+                              denoise = T,
+                              anno.db = "/Users/biofly/project/shijian/code/tianjin_Supple/singlecell_mouse/gencode.vM28.annotation.gtf")
+  }
